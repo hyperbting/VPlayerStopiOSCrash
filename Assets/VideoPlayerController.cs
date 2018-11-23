@@ -23,10 +23,23 @@ public class VideoPlayerController : MonoBehaviour {
 
     public void OnVideoLoopPointReached(VideoPlayer vp)
     {
+        StartCoroutine(RestartVideo());
+    }
+
+    IEnumerator RestartVideo()
+    {
         myVideoPlayer.Stop();
+        yield return null;
+        yield return null;
+        yield return null;
+
         counter++;
         loopCounter.text = counter.ToString();
         myVideoPlayer.Play();
+        yield return null;
+        yield return null;
+        yield return null;
+
     }
 
 }
